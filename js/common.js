@@ -59,7 +59,7 @@ const _prizes = [
             },
             {
                 name : 'daniel',
-                src : `https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWhwcDhkaG9veTYzNXNpOXpvd2l6YzFndjh5anNnczY4bHloM3pxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VtquEUCQw4rrZGCZ3w/giphy.gif`
+                src : `https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnh0YXpzejN3dXBnZXhyMGpxeHVncWpudjk5a3BucDZkdHh0cXFkNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/O39y8X6QNYigH2YYiO/giphy.gif`
             }
         ],
         percentage : 5
