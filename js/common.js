@@ -43,7 +43,7 @@ const _prizes = [
         photo : [
             {
                 name : `minji`,
-                src : `https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXJobDNyYzRuMTlseGRsenBxM2kydmFscnV4aDg4MW9sdDQ4bTd6diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AGVLIUlVtIURRMhqOg/giphy.gif`
+                src : `https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFoczBha242eGRnaGtmbjlyNDh1bzFwdHN0NXYybmttY3hqenN0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MRS3jjjxU8SdXHHglm/giphy.gif`
             },
             {
                 name : `hani`,
@@ -436,15 +436,15 @@ const newJeansIntro = () =>{
     // 시작 가림막 리셋
     _blur.classList.remove('hide');
     // _blur_result.classList.remove('hide')
-    if(_blur_result.classList.contains('fail')) _blur_result.remove('fail');
-    if(_blur_result.classList.contains('success')) _blur_result.remove('success');
+    if(_blur_result.classList.contains('fail')) _blur_result.classList.remove('fail');
+    if(_blur_result.classList.contains('success')) _blur_result.classList.remove('success');
     _readMeObj.classList.add('hide');
     _readBtn.classList.remove('hide');
 }
 
 const newJeansReset = () =>{
-    if(_blur_result.classList.contains('fail')) _blur_result.remove('fail');
-    if(_blur_result.classList.contains('success')) _blur_result.remove('success');
+    if(_blur_result.classList.contains('fail')) _blur_result.classList.remove('fail');
+    if(_blur_result.classList.contains('success')) _blur_result.classList.remove('success');
     const _basket = document.querySelector('.basket .item-in');
 
     // 스와이퍼 리셋
