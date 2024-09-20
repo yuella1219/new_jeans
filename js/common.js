@@ -287,6 +287,7 @@ const foldControlsButton = ()=>{
         cardEventFunction();
     }
     if(_foldBox = `fold03`){
+        newJeansIntro();
         newJeansReset();
     }
 }
@@ -428,14 +429,23 @@ const timerStart = () =>{
 // 게임 시작 전 리셋
 const _readMeObj = document.querySelector('.start-blur .read-me');
 const _blur = document.querySelector('.start-blur');
+const _blur_result = document.querySelector('.finish-blur');
 const _readBtn = document.querySelector('.start-blur .readme-btn');
 
-const newJeansReset = () =>{
+const newJeansIntro = () =>{
     // 시작 가림막 리셋
-    const _basket = document.querySelector('.basket .item-in');
     _blur.classList.remove('hide');
+    // _blur_result.classList.remove('hide')
+    if(_blur_result.classList.contains('fail')) _blur_result.remove('fail');
+    if(_blur_result.classList.contains('success')) _blur_result.remove('success');
     _readMeObj.classList.add('hide');
     _readBtn.classList.remove('hide');
+}
+
+const newJeansReset = () =>{
+    if(_blur_result.classList.contains('fail')) _blur_result.remove('fail');
+    if(_blur_result.classList.contains('success')) _blur_result.remove('success');
+    const _basket = document.querySelector('.basket .item-in');
 
     // 스와이퍼 리셋
     let _show = document.querySelector('.showcase .show');
@@ -470,12 +480,15 @@ const newJeansMarketReadMe = () =>{
     _readMeObj.classList.remove('hide');
 }
 
-
-
 const marketResulteFail = () => {
-        alert('fail');
-        newJeansReset();
-        // clearInterval(_check);
+    _blur_result.classList.remove('hide');
+    _blur_result.classList.add('fail')
+    // clearInterval(_check);
+}
+
+const marketResulteSuccess = () => {
+    _blur_result.classList.remove('hide');
+    _blur_result.classList.add('success')
 }
 
 // 결과 버튼
@@ -484,8 +497,7 @@ const costCalculate = (i) => {
     if(i > TOTAL_KEY || i < TOTAL_KEY){
         marketResulteFail();
     }else if(i == TOTAL_KEY){
-        alert('succese');
-        newJeansReset();
+        marketResulteSuccess();
     }
 }
 
@@ -494,6 +506,7 @@ let _wholeCost = 0;
 const ballCostCount = () => {
     let _cost = Number(event.target.closest('button').getAttribute('data-price'));
     _wholeCost = _wholeCost + _cost;
+    console.log(_wholeCost)
 }
 
 //물건 클릭 시 필요 함수 호출
@@ -503,6 +516,7 @@ const itemChoiceFunction = () =>{
 }
 
 const newjeansMarket = () =>{
+    newJeansIntro();
     newJeansReset();
 }
 
@@ -510,6 +524,8 @@ priceRender();
 
 const newJeansMarketStart = () =>{
     _blur.classList.add('hide');
+    _blur_result.classList.add('hide');
+    newJeansReset();
     timerStart();
     // newJeansClockStart();
 }

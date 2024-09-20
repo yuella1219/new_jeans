@@ -126,3 +126,17 @@ h1{font-size : 18px; text-align : center; margin : 0 0 20px; padding : 12px 0;}
 .start-blur .read-me{border-radius : 12px; background : #fff; padding : 20px; margin-bottom : 24px;}
 .start-blur .read-me p{font-size : 16px; line-height : 26px; margin-bottom : 6px; word-break : keep-all;}
 .start-blur .read-me p span{text-decoration : line-through; font-size : 12px; display : block; text-indent : 16px; font-weight : 300; filter : blur(2px);}
+
+.finish-blur{position : absolute; top : 0; left : 0; width : 100%; height : 100%; backdrop-filter : blur(10px); background : rgba(0, 0, 0, 0.7); padding : 20px; z-index : 999; box-sizing : border-box; display : flex; align-items : center; justify-content : center; flex-direction : column;}
+.finish-blur .inner{background:#fff;padding:24px 12px;border-radius:8px}
+.finish-blur .inner > div:not(:last-child){display:none}
+.finish-blur p{font-size:24px;font-weight:500;text-align:center;margin-bottom:12px}
+.finish-blur .btn-wrap{display:flex;align-items:center;justify-content:center;margin-top:12px}
+.finish-blur .btn-wrap button{border-radius : 8px; box-sizing : border-box; box-shadow : 3px 3px 3px rgba(0, 0, 0, 0.1); font-size : 16px; display : inline-flex; align-items : center; justify-content : center; width : 96px; height : 42px;}
+.finish-blur .btn-wrap button:active{box-shadow : inset 3px 3px 3px rgba(0, 0, 0, 0.3); font-weight : bold;}
+
+.finish-blur.success .inner .success{display:block}
+.finish-blur.fail .inner .fail{display:block}
+
+.btn-result-cal{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;background:#eee;border-radius:8px;font-size:18px}
+.btn-result-cal:hover{background:#5b34b6;color:#fff}
